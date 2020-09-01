@@ -1,0 +1,29 @@
+{
+  "name": "node-auth1-project",
+  "version": "1.0.0",
+  "description": "- Authentication.\r - Express Middleware.\r - Password Hashing.\r - Sessions\r - Cookies",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeyMichelle/node-auth1-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeyMichelle/node-auth1-project/issues"
+  },
+  "homepage": "https://github.com/HeyMichelle/node-auth1-project#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "knex": "^0.21.5",
+    "sqlite3": "^5.0.0"
+  }
+}
