@@ -1,6 +1,6 @@
 const express = require("express");
 const userModel = require("../models/user-model");
-const userMiddleware = require("./user-middleware");
+const userMiddleware = require("../middleware/user-middleware");
 const bcrypt = require("bcryptjs");
 
 const router = express.Router();
@@ -15,19 +15,7 @@ router.get("/users", userMiddleware.restrict(), async (req, res, next) => {
   }
 });
 
-router.get('/logout', userMiddleware.restrict(), (req, res, next) => {
-	try {
-		req.session.destroy(err => {
-			if (err) {
-			  next(err);
-			} else {
-			  res.status(204).end();
-			}
-		  });
-	} catch (err) {
-		next(err)
-	}
-});
+
 
 router.post("/register", async (req, res, next) => {
   try {

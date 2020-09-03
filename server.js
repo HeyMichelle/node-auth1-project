@@ -5,8 +5,8 @@ const cors = require("cors")
 const session = require("express-session")
 const KnexSessionStore = require("connect-session-knex")(session)
 
-const userRouter = require("./users/user-router")
-const db = require("../data/dbConfig"); // for storing
+const userRouter = require("./routers/user-router")
+const db = require("./data/dbConfig"); // for storing
 
 const server = express();
 
@@ -31,4 +31,4 @@ server.use((err, req, res, next) => {
 	})
 })
 
-module.exports = server;
+module.exports = server; 
