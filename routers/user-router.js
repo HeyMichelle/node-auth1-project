@@ -5,8 +5,6 @@ const bcrypt = require("bcryptjs");
 
 const router = express.Router();
 
-
-
 router.get("/users", userMiddleware.restrict(), async (req, res, next) => {
   try {
     res.json(await userModel.find());
@@ -14,8 +12,6 @@ router.get("/users", userMiddleware.restrict(), async (req, res, next) => {
     next(err);
   }
 });
-
-
 
 router.post("/register", async (req, res, next) => {
   try {
@@ -61,10 +57,10 @@ router.post("/login", async (req, res, next) => {
       return res.status(401).json({
         message: "invalid credentials",
       });
-	}
-	
-	// step 9: creates a new session for the user and sends it as a cookie
-	req.session.user = user;
+    }
+
+    // step 9: creates a new session for the user and sends it as a cookie
+    req.session.user = user;
 
     res.json({
       message: `Welcome ${user.username}!`,
@@ -75,17 +71,17 @@ router.post("/login", async (req, res, next) => {
 });
 
 router.get("/logout", userMiddleware.restrict(), async (req, res, next) => {
-	try {
-		req.session.destroy((err) => {
-			if (err) {
-				next(err)
-			} else {
-				res.status(204).end()
-			}
-		})
-	} catch (err) {
-		next(err)
-	}
-})
+  try {
+    req.session.destroy((err) => {
+      if (err) {
+        next(err);
+      } else {
+        res.status(204).end();
+      }
+    });
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router;
