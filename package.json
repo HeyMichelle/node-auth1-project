@@ -23,6 +23,11 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-session": "0.0.1",
+    "cors": "^2.8.5",
+    "express-session": "^1.17.1",
+    "helmet": "^4.1.0",
     "knex": "^0.21.5",
     "sqlite3": "^5.0.0"
   }
